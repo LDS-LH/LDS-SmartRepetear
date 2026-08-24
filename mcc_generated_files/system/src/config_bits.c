@@ -36,7 +36,7 @@
 // Configuration bits: selected in the GUI
 
 //CONFIG1
-#pragma config FEXTOSC = ECH    // External Oscillator Selection bits->EC above 8MHz; PFM set to high power
+#pragma config FEXTOSC = OFF    // External Oscillator Selection bits->EC above 8MHz; PFM set to high power
 #pragma config RSTOSC = HFINT32    // Reset Oscillator Selection bits->HFINTOSC with OSCFRQ= 32 MHz and CDIV = 1:1
 #pragma config CLKOUTEN = OFF    // Clock Out Enable bit->CLKOUT function is disabled; i/o or oscillator function on OSC2
 #pragma config CSWEN = ON    // Clock Switch Enable bit->Writing to NOSC and NDIV is allowed
@@ -48,7 +48,6 @@
 #pragma config LPBOREN = OFF    // Low-Power BOR Enable bit->ULPBOR disabled
 #pragma config BOREN = ON    // Brown-out Reset Enable bits->Brown-out Reset Enabled, SBOREN bit is ignored
 #pragma config BORV = LO    // Brown-out Reset Voltage Selection bit->Brown-out Reset Voltage (VBOR) set to 2.45V
-#pragma config ZCD = OFF    // ZCD Disable bit->Zero-cross detect circuit is disabled at POR.
 #pragma config PPS1WAY = ON    // PPSLOCKED One-Way Set Enable bit->The PPSLOCK bit can be cleared and set only once in software
 #pragma config STVREN = ON    // Stack Overflow/Underflow Reset Enable bit->Stack Overflow or Underflow will cause a reset
 
