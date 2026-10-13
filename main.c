@@ -140,24 +140,22 @@ void main(void)
  
         if(nmbs_bitfield_read(modbus_data.server_coils.coils, 1))
         {
-          //  modbus_data.server_input_register.sensor1_value = sensor1.sense(&sensor1.sensor_info.ADCChannel);
+            set_high_port(PORT_CONTROL_1);
         }
 
         if(nmbs_bitfield_read(modbus_data.server_coils.coils, 2))
         {
-            //modbus_data.server_input_register.sensor2_value = getSHTC3Data();
+           set_high_port(PORT_CONTROL_2);
         }
 
         if(nmbs_bitfield_read(modbus_data.server_coils.coils, 3))
         {
-            //modbus_data.server_input_register.sensor3_valueL = (uint16_t)(getBMP280Data(PRES) & 0xFFFF);;
-            //modbus_data.server_input_register.sensor3_valueH = (uint16_t)((getBMP280Data(PRES) >> 16) & 0xFF);
+           set_high_port(PORT_CONTROL_3);
 
         }
         if(nmbs_bitfield_read(modbus_data.server_coils.coils, 4))
         {
-           // modbus_data.server_input_register.sensor4_valueL = (uint16_t)(getBMP280Data(TEMP) & 0xFFFF);
-            //modbus_data.server_input_register.sensor4_valueH = (uint16_t)((getBMP280Data(TEMP) >> 16) & 0xFF);
+           set_high_port(PORT_CONTROL_4);
         }
 
         m_memset(modbus_data.server_coils.coils, 0, sizeof(modbus_data.server_coils.coils));
