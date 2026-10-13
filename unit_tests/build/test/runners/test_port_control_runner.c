@@ -25,8 +25,14 @@ struct UnityRunTestParameters
 extern void setUp(void);
 extern void tearDown(void);
 extern void test_set_high_port_invalid(void);
+extern void test_set_high_port_sets_each_port(void);
 extern void test_set_low_port_invalid(void);
-extern void test_suma(void);
+extern void test_set_low_port_sets_each_port(void);
+extern void test_set_high_all_sets_all_ports_high(void);
+extern void test_set_low_all_sets_all_ports_low(void);
+extern void test_set_high_all_except_keeps_selected_port_low(void);
+extern void test_set_low_all_except_keeps_selected_port_high(void);
+extern void test_all_except_rejects_invalid_port(void);
 
 
 /*=======Mock Management=====*/
@@ -101,9 +107,21 @@ static void run_test(UnityTestFunction func, const char* name, UNITY_LINE_TYPE l
       UNITY_PRINT_EOL();
       UnityPrint("  test_set_high_port_invalid");
       UNITY_PRINT_EOL();
+      UnityPrint("  test_set_high_port_sets_each_port");
+      UNITY_PRINT_EOL();
       UnityPrint("  test_set_low_port_invalid");
       UNITY_PRINT_EOL();
-      UnityPrint("  test_suma");
+      UnityPrint("  test_set_low_port_sets_each_port");
+      UNITY_PRINT_EOL();
+      UnityPrint("  test_set_high_all_sets_all_ports_high");
+      UNITY_PRINT_EOL();
+      UnityPrint("  test_set_low_all_sets_all_ports_low");
+      UNITY_PRINT_EOL();
+      UnityPrint("  test_set_high_all_except_keeps_selected_port_low");
+      UNITY_PRINT_EOL();
+      UnityPrint("  test_set_low_all_except_keeps_selected_port_high");
+      UNITY_PRINT_EOL();
+      UnityPrint("  test_all_except_rejects_invalid_port");
       UNITY_PRINT_EOL();
       return 0;
     }
@@ -112,19 +130,37 @@ static void run_test(UnityTestFunction func, const char* name, UNITY_LINE_TYPE l
 #endif
   UnityBegin("test_port_control.c");
 
-  struct UnityRunTestParameters run_test_params_arr[3];
+  struct UnityRunTestParameters run_test_params_arr[9];
 
   run_test_params_arr[0].func = test_set_high_port_invalid;
   run_test_params_arr[0].name = "test_set_high_port_invalid";
-  run_test_params_arr[0].line_num = 8;
-  run_test_params_arr[1].func = test_set_low_port_invalid;
-  run_test_params_arr[1].name = "test_set_low_port_invalid";
-  run_test_params_arr[1].line_num = 13;
-  run_test_params_arr[2].func = test_suma;
-  run_test_params_arr[2].name = "test_suma";
-  run_test_params_arr[2].line_num = 18;
+  run_test_params_arr[0].line_num = 14;
+  run_test_params_arr[1].func = test_set_high_port_sets_each_port;
+  run_test_params_arr[1].name = "test_set_high_port_sets_each_port";
+  run_test_params_arr[1].line_num = 19;
+  run_test_params_arr[2].func = test_set_low_port_invalid;
+  run_test_params_arr[2].name = "test_set_low_port_invalid";
+  run_test_params_arr[2].line_num = 34;
+  run_test_params_arr[3].func = test_set_low_port_sets_each_port;
+  run_test_params_arr[3].name = "test_set_low_port_sets_each_port";
+  run_test_params_arr[3].line_num = 39;
+  run_test_params_arr[4].func = test_set_high_all_sets_all_ports_high;
+  run_test_params_arr[4].name = "test_set_high_all_sets_all_ports_high";
+  run_test_params_arr[4].line_num = 56;
+  run_test_params_arr[5].func = test_set_low_all_sets_all_ports_low;
+  run_test_params_arr[5].name = "test_set_low_all_sets_all_ports_low";
+  run_test_params_arr[5].line_num = 65;
+  run_test_params_arr[6].func = test_set_high_all_except_keeps_selected_port_low;
+  run_test_params_arr[6].name = "test_set_high_all_except_keeps_selected_port_low";
+  run_test_params_arr[6].line_num = 76;
+  run_test_params_arr[7].func = test_set_low_all_except_keeps_selected_port_high;
+  run_test_params_arr[7].name = "test_set_low_all_except_keeps_selected_port_high";
+  run_test_params_arr[7].line_num = 106;
+  run_test_params_arr[8].func = test_all_except_rejects_invalid_port;
+  run_test_params_arr[8].name = "test_all_except_rejects_invalid_port";
+  run_test_params_arr[8].line_num = 138;
 
-  for (int i = 0; i < 3; i++)
+  for (int i = 0; i < 9; i++)
   {
     run_test(run_test_params_arr[i].func, run_test_params_arr[i].name, run_test_params_arr[i].line_num);
   }
