@@ -13,3 +13,8 @@
 /hsperfdata_*/
 /VSLiveshareLogs/
 /defmplabxtrace.log*
+
+# Temporales de herramientas copiados accidentalmente
+/mplab_ide/
+/opencode/
+/.vscode-cpptools-1000/
