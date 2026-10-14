@@ -1,0 +1,51 @@
+---
+:source:
+  :file: test/test_port_control.c
+  :dirname: test
+  :basename: test_port_control.c
+:successes:
+- :test: test_set_high_port_invalid
+  :line: 14
+  :message: ''
+  :unity_test_time: 0
+- :test: test_set_high_port_sets_each_port
+  :line: 19
+  :message: ''
+  :unity_test_time: 0
+- :test: test_set_low_port_invalid
+  :line: 34
+  :message: ''
+  :unity_test_time: 0
+- :test: test_set_low_port_sets_each_port
+  :line: 39
+  :message: ''
+  :unity_test_time: 0
+- :test: test_set_high_all_sets_all_ports_high
+  :line: 56
+  :message: ''
+  :unity_test_time: 0
+- :test: test_set_low_all_sets_all_ports_low
+  :line: 65
+  :message: ''
+  :unity_test_time: 0
+- :test: test_set_high_all_except_keeps_selected_port_low
+  :line: 76
+  :message: ''
+  :unity_test_time: 0
+- :test: test_set_low_all_except_keeps_selected_port_high
+  :line: 106
+  :message: ''
+  :unity_test_time: 0
+- :test: test_all_except_rejects_invalid_port
+  :line: 138
+  :message: ''
+  :unity_test_time: 0
+:failures: []
+:ignores: []
+:counts:
+  :total: 9
+  :passed: 9
+  :failed: 0
+  :ignored: 0
+:stdout: []
+:time: 0.0005984199997328687

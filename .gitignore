@@ -1,0 +1,20 @@
+/build/
+/dist/
+# Archivos temporales del sistema y herramientas
+/node-compile-cache/
+/gitkraken/
+/org.chromium.Chromium.*/
+/remote-file-*/
+/scoped_dir*/
+/snap-private-tmp/
+/systemd-private-*/
+/vscode-*/
+/mcp-*/
+/hsperfdata_*/
+/VSLiveshareLogs/
+/defmplabxtrace.log*
+
+# Temporales de herramientas copiados accidentalmente
+/mplab_ide/
+/opencode/
+/.vscode-cpptools-1000/
